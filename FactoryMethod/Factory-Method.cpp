@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  FactoryMethod
-//
-//  Created by Egor Timonin on 05/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 //enum ID {Product1 = 10, Product2  = 10};
