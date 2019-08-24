@@ -11,7 +11,7 @@
   + [Adapter](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Adapter/Adapter.cpp)
   + [Bridge](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Bridge/Bridge.cpp)
   + [Composite](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Composite/Composite.cpp)
-  + [Decorator](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Decorator/Decorator.cpp
+  + [Decorator](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Decorator/Decorator.cpp)
   + [Facade](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Facade/Facade.cpp)
   + [Flyweight](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Flyweight/Flyweight.cpp)
   + [Proxy](https://github.com/2gury/design_patterns/blob/master/Structural%20Patterns/Proxy/Proxy.cpp)
