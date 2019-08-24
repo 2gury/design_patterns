@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Iterator
-//
-//  Created by Egor Timonin on 20/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 template <typename Type>
