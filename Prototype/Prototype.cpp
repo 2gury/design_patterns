@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Prototype
-//
-//  Created by Egor Timonin on 06/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 class Prototype {
