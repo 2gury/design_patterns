@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Command
-//
-//  Created by Egor Timonin on 20/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 class Command {
