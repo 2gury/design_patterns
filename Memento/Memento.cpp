@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Memento
-//
-//  Created by Egor Timonin on 21/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 class Memento {
