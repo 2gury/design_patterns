@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Builder
-//
-//  Created by Egor Timonin on 04/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 #include <vector>
 
