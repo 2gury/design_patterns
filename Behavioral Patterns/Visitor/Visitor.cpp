@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Visitor
-//
-//  Created by Egor Timonin on 25/08/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 class ConcreteElementA;
 class ConcreteElementB;
 
