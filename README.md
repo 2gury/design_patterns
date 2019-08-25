@@ -27,4 +27,4 @@
   + [State](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/State/State.cpp)
   + [Strategy](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Strategy/Strategy.cpp)
   + [Template Method](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Template%20Method/Template-Method.cpp)
-  + Visitor
+  + [Visitor](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Visitor/Visitor.cpp)
