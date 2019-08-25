@@ -1,93 +1,86 @@
 #include <iostream>
 
-template <typename Type>
-class Iterator;
-
-template <typename Type>
-class ListIterator;
-
-template <typename Type>
-class ListNode;
-
-template <typename Type>
-class AbstractList {
+template <typename type>
+class ListNode {
 public:
-    virtual ~AbstractList() {};
-    virtual Iterator<Type>* CreateIterator() const = 0;
-    virtual int Count() = 0;
-    virtual void Append(Type item) = 0;
-};
-
-template <typename Type>
-class List : public AbstractList<Type> {
-public:
-    int Count() {
-        return size;
+    ListNode(): next(nullptr), data(0) {};
+    ListNode(type data_for_initialize): data(data_for_initialize) {};
+    void SetNext(std::shared_ptr<ListNode<type>> ptr_for_set) {
+        next = ptr_for_set;
     }
-    void Append(Type data){
-        Iterator<Type> it = this->CreateIterator();
-        for (it; !it.IsDone(); ) {
-            it.Next();
-        }
-        std::shared_ptr<ListNode<Type>> node;
-        node->SetData(data);
-        it.lock->SetNextPtr(node);
+    std::shared_ptr<ListNode<type>> GetNext() {
+        return next;
     }
-    Iterator<Type> CreateIterator() {
-        return ListIterator<Type>(this->head);
+    void SetData(type data_for_set) {
+        data = data_for_set;
+    }
+    type GetData() {
+        return data;
     }
 private:
-    int size;
-    std::shared_ptr<ListNode<Type>> head;
+    std::shared_ptr<ListNode<type>> next;
+    type data;
 };
 
-template <typename Type>
+template <typename type>
 class Iterator {
 public:
     virtual ~Iterator() {};
+    virtual void First() = 0;
     virtual void Next() = 0;
-    virtual bool IsDone() const = 0;
-    virtual Type* CurrentItem() const = 0;
+    virtual type GetCurrent() = 0;
+    virtual bool IsDone() = 0;
 };
 
-template <typename Type>
-class ListIterator : public Iterator<Type> {
+template <typename type>
+class ListIterator : public Iterator<type> {
 public:
+    ListIterator(): current(nullptr) {};
+    ListIterator(std::weak_ptr<ListNode<type>> ptr_for_initialize):
+    current(ptr_for_initialize) {};
     void Next() {
-        this->current = this->current.lock()->GetNextPtr();
+        current = current.lock()->GetNext;
+    }
+    type GetCurrent() {
+        return current.lock()->GetData();
     }
     bool IsDone() {
-        if (this->current.lock() == nullptr) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-    Type* CurrentItem() {
-        this->current.lock()->GetData();
+        return current.lock()->GetNext() == nullptr;
     }
 private:
-    std::weak_ptr<ListNode<Type>> current;
+    std::weak_ptr<ListNode<type>> current;
 };
 
-template <typename Type>
-class ListNode {
+template <typename type>
+class AbstractList {
 public:
-    void SetData(Type other_data) {
-        data = other_data;
+    virtual ~AbstractList() {};
+    virtual ListIterator<type> CreateIterator() = 0;
+};
+
+template <typename type>
+class List : public AbstractList<type> {
+public:
+    List(): head(nullptr), size(0) {};
+    int GetSize() {
+        return size;
     }
-    Type GetData() {
-        return data;
+    ListIterator<type> CreateIterator() {
+        return ListIterator<type>(this);
     }
-    void SetNextPtr(std::shared_ptr<ListNode<Type>> other_ptr) {
-        next = other_ptr;
-    }
-    std::shared_ptr<ListNode<Type>> GetNextPtr() {
-        return next;
+    void Append(type data_for_append) {
+        ListIterator<type> it = CreateIterator();
+        for(; !it.IsDone();) {
+            it.Next();
+        }
+        std::shared_ptr<ListNode<type>> node;
+        node->SetData(data_for_append);
+        it.lock()->SetNext(node);
+        ++size;
     }
 private:
-    Type data;
-    std::shared_ptr<ListNode<Type>> next;
+    std::shared_ptr<ListNode<type>> head;
+    int size;
 };
 
 int main(int argc, const char * argv[]) {
