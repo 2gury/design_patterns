@@ -66,7 +66,7 @@ public:
         return size;
     }
     ListIterator<type> CreateIterator() {
-        return ListIterator<type>(this);
+        return ListIterator<type>(head);
     }
     void Append(type data_for_append) {
         ListIterator<type> it = CreateIterator();
