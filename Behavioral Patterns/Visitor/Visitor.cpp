@@ -5,6 +5,7 @@ class ConcreteElementB;
 
 class Visitor {
 public:
+    virtual ~Visitor() {};
     virtual void Visit(ConcreteElementA *element) = 0;
     virtual void Visit(ConcreteElementB *element) = 0;
 };
