@@ -10,6 +10,7 @@ public:
     }
 private:
     Singleton() {};
+    Singelton(Singleton*);
     Singleton(const Singleton&);
     Singleton& operator=(Singleton&);
     
