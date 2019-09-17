@@ -43,7 +43,7 @@ public:
         if (flies.find(key) != flies.end()) {
             return flies[key];
         } else {
-            //not only ConcreteFlyweight you can use for crete
+            //not only ConcreteFlyweight you can use for create
             //you can analyze 'key' and choose needed Flyweight
             Flyweight* fly = new ConcreteFlyweight(key);
             flies.insert(std::pair<int, Flyweight*>(key, fly));
