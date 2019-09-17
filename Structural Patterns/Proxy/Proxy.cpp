@@ -1,3 +1,5 @@
+//Example of `proxy' design pattern in C++
+
 #include <iostream>
 
 class Subject {
@@ -8,7 +10,9 @@ public:
 
 class RealSubject : public Subject {
 public:
-    void Request() {};
+    void Request() {
+        //...implementation
+    };
 };
 
 class Proxy : public Subject {
@@ -20,7 +24,6 @@ public:
     void Request() {
         this->real_subject->Request();
     }
-
 private:
     Subject* real_subject;
 };
