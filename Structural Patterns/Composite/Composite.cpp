@@ -1,6 +1,7 @@
+//Example of `composite' design pattern in C++
+
 #include <iostream>
 #include <vector>
-
 
 class Component {
 public:
@@ -37,47 +38,6 @@ public:
     
 protected:
     std::vector<Component*> components;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Component {
-public:
-    virtual ~Component() {};
-    virtual void Operation() = 0;
-    virtual void Add(Component*) = 0;
-    virtual void Remove(Component*) = 0;
-    virtual void GetChild(int) = 0;
-};
-
-class Leaf : public Component {
-public:
-    void Operation() {
-        //...code
-    }
-};
-
-class Composite : public Component {
-public:
-    void Operation() {
-        //...for each item do Operation()
-    }
-    void Add(Component* item) {
-        this->items.push_back(item);
-    }
-private:
-    std::vector<Component*> items;
 };
 
 int main(int argc, const char * argv[]) {
