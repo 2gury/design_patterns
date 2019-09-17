@@ -9,18 +9,20 @@ public:
 
 class ConcreteFlyweight : public Flyweight {
 public:
-    ConcreteFlyweight(int intrinsic_state): state(intrinsic_state) {};
+    ConcreteFlyweight(int intrinsic_state_for_initialize):
+    intrinsic_state(intrinsic_state_for_initialize) {};
     void Operation(int extrinsic_state) {};
 private:
-    int state;
+    int intrinsic_state;
 };
 
 class UnsharedConcreteFlyweight : public Flyweight {
 public:
-    UnsharedConcreteFlyweight(int all_state): state(all_state) {};
+    UnsharedConcreteFlyweight(int all_state_for_initialize): 
+    all_state(all_state_for_initialize) {};
     void Operation(int extrinsic_state) {};
 private:
-    int state;
+    int all_state;
 };
 
 class FlyweightFactory {
