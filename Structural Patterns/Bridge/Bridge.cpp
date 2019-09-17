@@ -1,3 +1,5 @@
+//Example of `bridge' design pattern in C++
+
 #include <iostream>
 
 class Implementor {
