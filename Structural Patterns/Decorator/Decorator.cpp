@@ -1,3 +1,5 @@
+//Example of `decorator' design pattern in C++
+
 #include <iostream>
 
 class Component {
@@ -15,18 +17,20 @@ public:
 
 class Decorator : public Component {
 public:
+    Decorator(Component* component_for_initialize): 
+    component(component_for_initialize) {};
     virtual ~Decorator() {};
-    Decorator(Component* other_component): component(other_component) {};
     void  Operation() {
-        this->component->Operation();
+        this->concrete_component->Operation();
     }
 private:
-    Component* component;
+    Component* concrete_component;
 };
 
 class ConcreteDecoratorA :  public Decorator  {
 public:
-    ConcreteDecoratorA(Component*  other_component): Decorator(other_component) {};
+    ConcreteDecoratorA(Component*  component_for_initialize): 
+    Decorator(component_for_initialize) {};
     void Operation () {
         Decorator::Operation();
         //...code of decorator implementation
@@ -35,7 +39,8 @@ public:
 
 class ConcreteDecoratorB : public Decorator{
 public:
-    ConcreteDecoratorB(Component* other_component): Decorator(other_component) {
+    ConcreteDecoratorB(Component* component_for_initialize): 
+    Decorator(component_for_initialize) {
         Decorator::Operation();
         //...code of decorator implementation
     }
