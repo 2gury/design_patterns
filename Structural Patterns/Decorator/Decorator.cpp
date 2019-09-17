@@ -8,7 +8,9 @@ public:
 
 class ConcreteComponent : public Component {
 public:
-    void Operation() {};
+    void Operation() {
+        //...implementation
+    };
 };
 
 class Decorator : public Component {
