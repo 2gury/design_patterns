@@ -1,18 +1,26 @@
+//Example of `facade' design pattern in C++
+
 #include <iostream>
 
 class Subsystem1 {
 public:
-    void Operation() {};
+    void Operation() {
+        //...implementation
+    };
 };
 
 class Subsystem2 {
 public:
-    void  Operation() {};
+    void  Operation() {
+        //...implementation
+    };
 };
 
 class Subsystem3 {
 public:
-    void Operation() {};
+    void Operation() {
+        //...implementation
+    };
 };
 
 class Facade {
@@ -22,12 +30,15 @@ public:
         subsys2 = new Subsystem2;
         subsys3 = new Subsystem3;
     }
-    
+    ~Facade() {
+        delete subsys1;
+        delete subsys2;
+        delete subsys3;
+    }
     void Action1() {
         subsys1->Operation();
         subsys2->Operation();
     }
-    
     void Action2() {
         subsys3->Operation();
     }
