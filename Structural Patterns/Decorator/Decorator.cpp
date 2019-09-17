@@ -18,7 +18,7 @@ public:
 class Decorator : public Component {
 public:
     Decorator(Component* component_for_initialize): 
-    component(component_for_initialize) {};
+    concrete_component(component_for_initialize) {};
     virtual ~Decorator() {};
     void  Operation() {
         this->concrete_component->Operation();
