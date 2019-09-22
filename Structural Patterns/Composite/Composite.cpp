@@ -15,28 +15,38 @@ public:
 class Leaf : public Component {
 public:
     void Operation() {
-        //...code of implementation
+        //...implementation
     }
 };
 
 class Composite : public Component {
 public:
     ~Composite() {
-        for (int i = 0; i < this->components.size(); ++i) {
+        for (int i = 0; i < components.size(); ++i) {
             delete components[i];
         }
     }
     void Operation() {
-        for (int i = 0; i< components.size(); ++i) {
-            this->components[i]->Operation();
+        for (int i = 0; i < components.size(); ++i) {
+            components[i]->Operation();
         }
     }
-    void Add(Component* other_component) {
-        this->components.push_back(other_component);
+    void Add(Component* cmp) {
+        components.push_back(cmp);
     }
-    //... other implementation of functions
-    
-protected:
+    void Remove(Component* cmp) {
+        for (int i = 0; i < components.size(); ++i) {
+            if (cmp == components[i]) {
+                delete components[i];
+                components.erase(components.begin() + i);
+                break;
+            }
+        }
+    }
+    Component* GetChild(int index) {
+        return components[index];
+    }
+private:
     std::vector<Component*> components;
 };
 
