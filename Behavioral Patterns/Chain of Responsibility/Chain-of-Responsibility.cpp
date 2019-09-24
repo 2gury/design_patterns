@@ -1,3 +1,5 @@
+//Example of `chain of responsibility' design pattern in C++
+
 #include <iostream>
 
 class Handler {
