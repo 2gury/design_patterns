@@ -1,3 +1,5 @@
+//Example of `object pool' design pattern in C++
+
 #include <iostream>
 #include <vector>
 
