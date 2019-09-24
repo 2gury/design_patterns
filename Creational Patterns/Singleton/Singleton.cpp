@@ -1,3 +1,5 @@
+//Example of `singleton' design pattern in C++
+
 #include <iostream>
 
 class Singleton {
