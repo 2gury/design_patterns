@@ -1,3 +1,5 @@
+//Example of `mediator' design pattern in C++
+
 #include <iostream>
 
 class Colleague;
