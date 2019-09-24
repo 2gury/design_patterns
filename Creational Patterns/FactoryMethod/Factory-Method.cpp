@@ -3,6 +3,38 @@
 #include <iostream>
 
 //////////////////////////////////////////////////
+//The classic implementation of 'factory method'//
+//////////////////////////////////////////////////
+
+class Product {
+public:
+    virtual ~Product() {};
+};
+
+class ConcreteProduct1 : public Product {};
+class ConcreteProduct2 : public Product {};
+
+class Creator {
+public:
+    virtual ~Creator() {};
+    virtual Product* CreateProduct()  = 0;
+};
+
+class ConcreteCreator1 : public Creator {
+public:
+    Product* CreateProduct()  {
+        return new ConcreteProduct1;
+    }
+};
+
+class ConcreteCreator2 : public Creator {
+public:
+    Product* CreateProduct()  {
+        return new ConcreteProduct2;
+    }
+};
+
+//////////////////////////////////////////////////
 //Not classic implementation of 'factory method'//
 //////////////////////////////////////////////////
 
@@ -37,39 +69,6 @@ Product* CreateProduct(ID ProductID) {
    }
    return CreatedProduct;
 }
-
-
-//////////////////////////////////////////////////
-//The classic implementation of 'factory method'//
-//////////////////////////////////////////////////
-
-class Product {
-public:
-    virtual ~Product() {};
-};
-
-class ConcreteProduct1 : public Product {};
-class ConcreteProduct2 : public Product {};
-
-class Creator {
-public:
-    virtual ~Creator() {};
-    virtual Product* CreateProduct()  = 0;
-};
-
-class ConcreteCreator1 : public Creator {
-public:
-    Product* CreateProduct()  {
-        return new ConcreteProduct1;
-    }
-};
-
-class ConcreteCreator2 : public Creator {
-public:
-    Product* CreateProduct()  {
-        return new ConcreteProduct2;
-    }
-};
 
 int main(int argc, const char * argv[]) {
     // insert code here...
