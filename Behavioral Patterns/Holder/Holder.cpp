@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Holder
-//
-//  Created by Egor Timonin on 24/09/2019.
-//  Copyright © 2019 Egor Timonin. All rights reserved.
-//
-
 #include <iostream>
 
 template <typename T>
