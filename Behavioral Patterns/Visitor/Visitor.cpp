@@ -1,3 +1,5 @@
+//Example of `visitor' design pattern in C++
+
 #include <iostream>
 
 class ConcreteElementA;
