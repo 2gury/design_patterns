@@ -1,3 +1,5 @@
+//Example of `memento' design pattern in C++
+
 #include <iostream>
 
 class Memento {
