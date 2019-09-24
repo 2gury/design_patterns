@@ -1,3 +1,5 @@
+//Example of `factory method' design pattern in C++
+
 #include <iostream>
 
 //enum ID {Product1 = 10, Product2  = 10};
