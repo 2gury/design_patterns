@@ -1,3 +1,5 @@
+//Example of `prototype' design pattern in C++
+
 #include <iostream>
 
 class Prototype {
