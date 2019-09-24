@@ -1,3 +1,5 @@
+//Example of `holder' design pattern in C++
+
 #include <iostream>
 
 template <typename T>
@@ -6,15 +8,17 @@ class Holder;
 template <typename T>
 class Trule {
 public:
-    ~Trule() {delete ptr;};
     Trule(Holder<T>& h) {
         ptr = h.release();
     }
+    ~Trule() {delete ptr;};
 private:
+    friend class Holder<T>;
+    
     T* ptr;
+    
     Trule(Trule<T>* t);
     Trule& operator= (Trule<T>&);
-    friend class Holder<T>;
 };
 
 template <typename T>
@@ -22,21 +26,21 @@ class Holder {
 public:
     Holder(): ptr(0) {};
     explicit Holder(T* p): ptr(p) {};
-    ~Holder() {delete ptr;};
-    T& operator *() const {return *ptr;};
-    T& get() const {return *ptr;};
-    T* operator->() const {return ptr;};
-    void exchange(Holder<T>& h);
     Holder(Trule<T> const t) {
         ptr = t.ptr;
         const_cast<Trule<T>>(t).ptr = 0;
     }
+    ~Holder() {delete ptr;};
+    T& operator *() const {return *ptr;};
+    T* operator->() const {return ptr;};
     Holder<T>& operator= (Trule<T> const& t) {
         delete ptr;
         ptr = t.ptr;
         const_cast<Trule<T>>(t).ptr = 0;
         return *this;
     }
+    void exchange(Holder<T>& h);
+    T& get() const {return *ptr;};
     T* release() {
         T* p = ptr;
         ptr = 0;
@@ -44,6 +48,7 @@ public:
     }
 private:
     T* ptr;
+    
     Holder(Holder<T> const&);
     Holder<T>& operator= (Holder<T> const&);
 };
