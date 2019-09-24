@@ -1,3 +1,5 @@
+//Example of `abstract factory' design pattern in C++
+
 #include <iostream>
 
 class AbstractProductA {
