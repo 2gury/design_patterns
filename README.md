@@ -20,6 +20,7 @@
 ## Behavioral Patterns
   + [Chain of Responsibility](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Chain%20of%20Responsibility/Chain-of-Responsibility.cpp)
   + [Command](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Command/Command.cpp)
+  + [Holder](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Holder/Holder.cpp)
   + [Iterator](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Iterator/Iterator.cpp)
   + [Interpreter](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Interpreter/Interpreter.cpp)
   + [Mediator](https://github.com/2gury/design_patterns/blob/master/Behavioral%20Patterns/Mediator/Mediator.cpp)
