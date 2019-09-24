@@ -1,3 +1,5 @@
+//Example of `interpreter' design pattern in C++
+
 #include <iostream>
 #include <string>
 
