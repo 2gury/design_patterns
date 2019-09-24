@@ -1,3 +1,5 @@
+//Example of `builder' design pattern in C++
+
 #include <iostream>
 #include <vector>
 
