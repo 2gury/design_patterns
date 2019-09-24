@@ -1,3 +1,5 @@
+//Example of `template method' design pattern in C++
+
 #include <iostream>
 
 class AbstractClass {
