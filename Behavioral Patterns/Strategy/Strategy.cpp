@@ -1,3 +1,5 @@
+//Example of `strategy' design pattern in C++
+
 #include <iostream>
 
 class Strategy {
@@ -9,7 +11,7 @@ public:
 class ConcreteStrategyA : public Strategy {
 public:
     void AlgorithmInterface() {
-        //implementation of algorithm S
+        //implementation of algorithm A
     }
 };
 
