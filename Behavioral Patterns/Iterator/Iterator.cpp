@@ -1,3 +1,5 @@
+//Example of `iterator' design pattern in C++
+
 #include <iostream>
 
 template <typename type>
