@@ -2,37 +2,46 @@
 
 #include <iostream>
 
-//enum ID {Product1 = 10, Product2  = 10};
-//
-//class Product {
-//public:
-//    static Product* CreateProduct(ID ProductID);
-//    virtual void info() = 0;
-//    virtual ~Product();
-//};
-//
-//class ConcreteProduct1 : public Product {
-//public:
-//    void info() {
-//        std::cout << "ConcreteProduct1" << std::endl;
-//    }
-//};
-//class ConcreteProduct2 : public Product {
-//public:
-//    void info() {
-//        std::cout << "ConcreteProduct2" << std::endl;
-//    }
-//};
-//
-//Product* CreateProduct(ID ProductID) {
-//    Product* CreatedProduct;
-//    if (ProductID == Product1) {
-//        CreatedProduct = new ConcreteProduct1;
-//    } else if (ProductID == Product2) {
-//        CreatedProduct = new ConcreteProduct2;
-//    }
-//    return CreatedProduct;
-//}
+//////////////////////////////////////////////////
+//Not classic implementation of 'factory method'//
+//////////////////////////////////////////////////
+
+enum ID {Product1 = 10, Product2  = 10};
+
+class Product {
+public:
+   static Product* CreateProduct(ID ProductID);
+   virtual void info() = 0;
+   virtual ~Product();
+};
+
+class ConcreteProduct1 : public Product {
+public:
+   void info() {
+       std::cout << "ConcreteProduct1" << std::endl;
+   }
+};
+class ConcreteProduct2 : public Product {
+public:
+   void info() {
+       std::cout << "ConcreteProduct2" << std::endl;
+   }
+};
+
+Product* CreateProduct(ID ProductID) {
+   Product* CreatedProduct;
+   if (ProductID == Product1) {
+       CreatedProduct = new ConcreteProduct1;
+   } else if (ProductID == Product2) {
+       CreatedProduct = new ConcreteProduct2;
+   }
+   return CreatedProduct;
+}
+
+
+//////////////////////////////////////////////////
+//The classic implementation of 'factory method'//
+//////////////////////////////////////////////////
 
 class Product {
 public:
