@@ -1,3 +1,5 @@
+//Example of `observer' design pattern in C++
+
 #include <iostream>
 #include <vector>
 
